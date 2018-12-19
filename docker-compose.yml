@@ -56,9 +56,9 @@ services:
     container_name: cv-api
     build:
     depends_on:
-	- config
-	- discovery
-	- gateway
+    - config
+    - discovery
+    - gateway
       context: cv-api-for-cloud
       args:
       - artifact_id=cv-api
