@@ -16,8 +16,6 @@ services:
   consumer:
     container_name: consumer
     build:
-    depends_on:
-    - activemq
       context: consumer
       args:
       - artifact_id=consumer
