@@ -57,7 +57,7 @@ services:
     - config
     - discovery
     - gateway
-      context: cv-api-for-cloud
+      context: cv-api
       args:
       - artifact_id=cv-api
       - version=0.0.1-SNAPSHOT
