@@ -1,0 +1,55 @@
+version: '3'
+services:
+  activemq:
+    container_name: activemq
+    image: bobcrutchley/activemq
+  mongodb:
+    container_name: mongodb
+    image: mongo
+  config:
+    container_name: config
+    build:
+      context: config	
+      args:
+      - artifact_id=config	
+      - version=0.0.1-SNAPSHOT
+  cv-api-for-cloud:
+    container_name: cv-api-for-cloud
+    build:
+      context: cv-api-for-cloud
+      args:
+      - artifact_id=cv-api-for-cloud
+      - version=0.0.1-SNAPSHOT
+    ports:
+      - "8080:8080"
+  discovery:	
+    container_name: discovery
+    build:
+      context: discovery
+      args:
+      - artifact_id=discovery
+      - version=0.0.1-SNAPSHOT
+  front-end:
+    container_name: front-end
+    build:
+      context: front-end
+      args:
+      - artifact_id=front-end
+      - version=0.0.1-SNAPSHOT
+  gateway:	
+    container_name: gateway	
+    build:
+      context: gateway
+      args:
+      - artifact_id=gateway	
+      - version=0.1.0
+  user-creation-api:	
+    container_name: user-creation-api
+    build:
+      context: user-creation-api
+      args:
+      - artifact_id=user-creation-api	
+      - version=0.1.0
+
+    ports:
+      - "80:3000"
