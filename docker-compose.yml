@@ -22,17 +22,6 @@ services:
       args:
       - artifact_id=consumer
       - version=0.0.1-SNAPSHOT
-  cv-api:
-    container_name: cv-api
-    build:
-    depends_on:
-	- config
-	- discovery
-	- gateway
-      context: cv-api-for-cloud
-      args:
-      - artifact_id=cv-api
-      - version=0.0.1-SNAPSHOT
   discovery:	
     container_name: discovery
     build:
@@ -63,4 +52,15 @@ services:
       args:
       - artifact_id=user-creation-api	
       - version=0.1.0
+  cv-api:
+    container_name: cv-api
+    build:
+    depends_on:
+	- config
+	- discovery
+	- gateway
+      context: cv-api-for-cloud
+      args:
+      - artifact_id=cv-api
+      - version=0.0.1-SNAPSHOT
 
