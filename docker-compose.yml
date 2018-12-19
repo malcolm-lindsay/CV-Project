@@ -13,11 +13,11 @@ services:
       args:
       - artifact_id=config	
       - version=0.0.1-SNAPSHOT
-consumer:
+  consumer:
     container_name: consumer
     build:
     depends_on:
-	-activemq
+        - activemq
       context: consumer
       args:
       - artifact_id=consumer
@@ -26,9 +26,9 @@ consumer:
     container_name: cv-api
     build:
     depends_on:
-	-config
-	-discovery
-	-gateway
+	- config
+	- discovery
+	- gateway
       context: cv-api-for-cloud
       args:
       - artifact_id=cv-api
