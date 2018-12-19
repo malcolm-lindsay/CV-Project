@@ -9,7 +9,7 @@ services:
   config:
     container_name: config
     build:
-      context: config	
+      context: config
       args:
       - artifact_id=config	
       - version=0.0.1-SNAPSHOT
@@ -63,4 +63,3 @@ services:
       args:
       - artifact_id=cv-api
       - version=0.0.1-SNAPSHOT
-
