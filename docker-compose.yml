@@ -11,7 +11,7 @@ services:
     build:
       context: config
       args:
-      - artifact_id=config	
+      - artifact_id=config
       - version=0.0.1-SNAPSHOT
   consumer:
     container_name: consumer
@@ -22,7 +22,7 @@ services:
       args:
       - artifact_id=consumer
       - version=0.0.1-SNAPSHOT
-  discovery:	
+  discovery:
     container_name: discovery
     build:
       context: discovery
@@ -38,19 +38,19 @@ services:
       - version=0.0.1-SNAPSHOT
     ports:
       - "80:3000"
-  gateway:	
-    container_name: gateway	
+  gateway:
+    container_name: gateway
     build:
       context: gateway
       args:
-      - artifact_id=gateway	
+      - artifact_id=gateway
       - version=0.1.0
-  user-creation-api:	
+  user-creation-api:
     container_name: user-creation-api
     build:
       context: user-creation-api
       args:
-      - artifact_id=user-creation-api	
+      - artifact_id=user-creation-api
       - version=0.1.0
   cv-api:
     container_name: cv-api
