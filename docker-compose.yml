@@ -20,8 +20,6 @@ services:
       args:
       - artifact_id=cv-api-for-cloud
       - version=0.0.1-SNAPSHOT
-    ports:
-      - "8080:8080"
   discovery:	
     container_name: discovery
     build:
